@@ -15,7 +15,7 @@ class DotsTest < Test::Unit::TestCase
   def test_dots
     prepare
     assert_equal(dots.count, 1000)
-    assert_equal(dots.first, 'dots/1.dot')
+    assert_equal(dots.first, 'dots/0001.dot')
     assert_equal(dots.last, 'dots/1000.dot')
   end
 end
