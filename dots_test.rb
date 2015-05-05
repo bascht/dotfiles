@@ -5,7 +5,7 @@ require "test/unit"
 class DotsTest < Test::Unit::TestCase
   def prepare
     FileUtils.rm(Dir.glob("dots/*.dot"))
-    Rake.application['generate'].invoke(:how_many => 100)
+    Rake.application['generate'].execute(how_many: 100)
   end
 
   def dots
@@ -14,8 +14,8 @@ class DotsTest < Test::Unit::TestCase
 
   def test_dots
     prepare
-    assert_equal(dots.count, 1000)
-    assert_equal(dots.first, 'dots/1.dot')
-    assert_equal(dots.last, 'dots/1000.dot')
+    assert_equal(dots.count, 100)
+    assert_equal(dots.first, 'dots/001.dot')
+    assert_equal(dots.last, 'dots/100.dot')
   end
 end
